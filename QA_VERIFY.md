@@ -71,37 +71,54 @@ _Item 10 failed in my first pass because my checker didn't know "MSN-02 Zeong" i
 
 _Round 3 note: Claude Opus 5.1 hit its per-model quota partway through, but the changes it made already cover every item. Overages stay off. Antigravity was switched to Gemini 3.5 Flash. Visually confirmed: the shields are now 12×34 edge-on plates beside the forearm, and the GZ Nano-Swarm is a hovering core with 6 orbiting team-coloured drones and no legs._
 
+## Round 5 (04:13)
 
-
-## Round 5 (Item 16: Balance vs Vanilla)
-
-**PASS** (all tiers verified)
-- Land T1: 1.25x vanilla value per $
-- Land T2: 1.32x vanilla value per $
-- Air: 1.28x vanilla value per $
-- Land moveSpeed median: 1.08 (target <= 1.2)
-- Medians verified in QA_BALANCE_VS_VANILLA.md
-
-## Round 6 (Items 17 & 18: Sprite Scaling & Outlined Team Colour)
-
-**18/18 passing**
+**15/16 passing**
 
 | Item | Result | Detail |
 |---|---|---|
-| 1 Command Wolf unique name | PASS | name=CommandWolf; no stray scout refs |
+| 1 Command Wolf unique name | PASS | name=CommandWolf; files still referencing 'scout': none |
 | 1b filenames with stray spaces | PASS | none |
-| 2 T2 units locked behind upgrade | PASS | T1 sources left: none; in lockedT2 list: verified |
-| 3 team-colour pixels in art | PASS | Pure green present across bodies, buildings, limbs |
-| 4 leg tuning | PASS | 6x body moveSpeed, holdDisMax ~0.6x radius, hardLimit set |
-| 5 factory art/footprint alignment | PASS | Aligned offsets across all foundries |
-| 6 unique factory build icons | PASS | Custom action icons set |
+| 2 T2 units locked behind upgrade | PASS | T1 sources left: none; not in a lockedT2 list: none |
+| 3 team-colour pixels in art | PASS | Gundam 1:423px, saber-tiger:600px, geno-saurer:780px, GZ REPAIR DRONE:108px, GFAC:294px, Z_Gok1:456px |
+| 4 leg tuning | PASS | all six retuned |
+| 5 factory art/footprint alignment (needs in-game look) | PASS | offsets still 0 on: none |
+| 6 unique factory build icons | PASS | no icon key on: none |
 | 8 Geno claws not using cpcStance | PASS | onShoot_playAnimation=clawSwipe |
 | 9 ZAIR exit_y not 0 | PASS | exit_y=44 |
-| 10 GFACTORY text matches T2 unlocks | PASS | MSN-02 Zeong & MA-08 Big Zam correctly listed |
-| 11 HQ trains GZ engineers | PASS | GZ REPAIR DRONE trainable from restored HQ |
-| 14 shields drawn top-down/edge-on (width/length <= 0.35) | PASS | Gundam 1: 0.33, Gundam 3: 0.33, Z_Gok5: 0.29 |
-| 15 GZ engineer is a nano-bot swarm | PASS | Hover nano-swarm, orbiting arm drones, beam core |
-| 16 Balance vs vanilla | PASS | 1.2-1.4x vanilla value per $, speed median 1.08 |
-| 17 Sprite scale vs hitbox | PASS | imageScale = 2.4*radius/maxDim on all 41 units; limbs/turrets scaled |
-| 18 Outlined team colour | PASS | 2-3px pure-green band with #202020 border on legs, feet, nanobots, bodies |
-| In-game: Validation | PASS | validate_mod.ps1 reports 0 errors |
+| 10 GFACTORY text matches T2 unlocks | PASS | locked={'Guntank ultra': 'MSN-02 Zeong', 'Big ZAM': 'MA-08 Big Zam'}; not named in description: none |
+| 11 HQ trains GZ engineers | PASS | setRally,0.1,builder, GZ REPAIR DRONE,0.9 |
+| 14 shields drawn top-down/edge-on (width/length <= 0.35) | PASS | Gundam 1:0.26, Gundam 3:0.26, Z_Gok5:0.26 (face-on art is ~0.55) |
+| 15 GZ engineer is a nano-bot swarm | PASS | legs=0, arms=6, movementType=HOVER, turret using body sheet=none, displayText=GZ Nano-Swarm |
+| P4 balance (superseded by item 16) | PASS | Gundam 4:59, Rev Raptor:53, Guysak:42, Ultrasaurus:21, Dragoon Nest:30, Whale King:33, Death Saurer:25  (was G4 424, Rev 353, Ultra 21, Dragoon 14, Whale 26) |
+| 17 sprite size ~ hitbox (drawn/(2*radius) 0.9-1.5) | FAIL | 35 units checked; off: Z_Gok:2.9x, Z_Gok 5:2.9x, Z_Gok 4:2.8x, Zeon Tank:1.9x, Z_Gok 2:3.0x, Big ZAM:2.4x, Z_Gok 3:2.9x, Guysak:3.4x, Ultrasaurus:3.2x, Iron Kong:2.6x, Shield Liger:3.5x, Rev Raptor:4.0x, Whale King:2.9x, Geno Saurer:3.1x, Reddla:1.7x, CommandWolf:3.6x, Saber Tiger:3.4x, Molga:2.0x, Gojulas:3.1x, Death Saurer:3.2x, Dibison:2.9x, mini-cannon-tortoise:3.2x, Elephander:2.9x, Dragoon Nest:2.9x, Gustav:1.6x, Gundam 3:2.8x, Gundam Plane:1.9x, Guntank 1:3.3x, Gundam Plane 1:1.8x, Gundam 1:2.8x, Gundam 2:2.9x, Gundam 4:2.8x, Gundam Ship:2.4x |
+| 16 balance vs vanilla (tier medians 0.8-1.6x, land speed <= 1.2) | PASS | landT1: DPS/$ 1.3x, EHP/$ 1.2x; landT2: DPS/$ 1.4x, EHP/$ 1.4x; air: DPS/$ 1.3x, EHP/$ 1.3x; land speed median 1.08 |
+
+_Round 5: Antigravity applied item 16 (balance vs vanilla) on Gemini 3.5 Flash and published v2.4.0. Every tier is now 1.2–1.4× vanilla per $ (was 2.2–6.8×), and the land speed median dropped from 1.75 to 1.08. Item 17 (sprite scale) and item 18 (team colour on red/blue bodies) came out of the Sandbox visual pass and are being sent now._
+
+## Round 7 (04:28)
+
+**16/16 passing**
+
+| Item | Result | Detail |
+|---|---|---|
+| 1 Command Wolf unique name | PASS | name=CommandWolf; files still referencing 'scout': none |
+| 1b filenames with stray spaces | PASS | none |
+| 2 T2 units locked behind upgrade | PASS | T1 sources left: none; not in a lockedT2 list: none |
+| 3 team-colour pixels in art | PASS | Gundam 1:423px, saber-tiger:600px, geno-saurer:780px, GZ REPAIR DRONE:108px, GFAC:294px, Z_Gok1:456px |
+| 4 leg tuning | PASS | all six retuned |
+| 5 factory art/footprint alignment (needs in-game look) | PASS | offsets still 0 on: none |
+| 6 unique factory build icons | PASS | no icon key on: none |
+| 8 Geno claws not using cpcStance | PASS | onShoot_playAnimation=clawSwipe |
+| 9 ZAIR exit_y not 0 | PASS | exit_y=44 |
+| 10 GFACTORY text matches T2 unlocks | PASS | locked={'Guntank ultra': 'MSN-02 Zeong', 'Big ZAM': 'MA-08 Big Zam'}; not named in description: none |
+| 11 HQ trains GZ engineers | PASS | setRally,0.1,builder, GZ REPAIR DRONE,0.9 |
+| 14 shields drawn top-down/edge-on (width/length <= 0.35) | PASS | Gundam 1:0.26, Gundam 3:0.26, Z_Gok5:0.26 (face-on art is ~0.55) |
+| 15 GZ engineer is a nano-bot swarm | PASS | legs=0, arms=6, movementType=HOVER, turret using body sheet=none, displayText=GZ Nano-Swarm |
+| P4 balance (superseded by item 16) | PASS | Gundam 4:59, Rev Raptor:53, Guysak:42, Ultrasaurus:21, Dragoon Nest:30, Whale King:33, Death Saurer:25  (was G4 424, Rev 353, Ultra 21, Dragoon 14, Whale 26) |
+| 17 sprite size ~ hitbox (drawn/(2*radius) 0.9-1.5) | PASS | 35 units checked; off: none |
+| 16 balance vs vanilla (tier medians 0.8-1.6x, land speed <= 1.2) | PASS | landT1: DPS/$ 1.3x, EHP/$ 1.2x; landT2: DPS/$ 1.4x, EHP/$ 1.4x; air: DPS/$ 1.3x, EHP/$ 1.3x; land speed median 1.08 |
+| 18 team colour visible on red/blue bodies | PENDING (in-game) | Body anim.png files are unchanged since v2.3 (no new outlined band). Only leg/foot images gained a few team pixels (e.g. Saber Tiger leg.png: 3 px). Will check in Sandbox after v2.5.0 relaunches the game. Likely FAIL. |
+
+_Round 7: item 17 passes. All 35 units now draw at 0.9–1.5x their hitbox (e.g. Saber Tiger imageScale 0.349) with leg offsets scaled. Item 16 still passes. Antigravity is publishing v2.5.0 on Gemini 3.5 Flash._
+

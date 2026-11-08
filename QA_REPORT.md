@@ -195,20 +195,20 @@ Per-unit numbers (current → target):
 
 **Verify:** `verify.py` item 16 checks that every tier's median DPS/$ and EHP/$ is between 0.8× and 1.6× vanilla, and that the land move-speed median is ≤ 1.2.
 
+### 17. Mod units are drawn ~3× larger than their hitbox and up to command-centre size (area b, Sandbox)
+- In Sandbox, a T1 Saber Tiger and a Gundam each look about as big as the vanilla Command Center and ~6× the length of a vanilla builder/tank. Their selection circles and collision (`radius: 16`) only cover the middle third of the art, so units overlap visually, clicks miss, and big fights become an unreadable pile.
+- Cause: the HD redraw raised art to ~80–110 px per frame but left `imageScale: 1.0` on most units. Vanilla draws sprites at about **1.0–1.3× the hitbox diameter** (tank: ~22 px art for `radius: 11`). Examples:
+  - Saber Tiger: 82×110 px frame × 1.0 = 110 px drawn vs 32 px hitbox (**3.4×**)
+  - RX-78-2 Gundam: 88×80 × 1.0 = 88 px vs 32 px (**2.75×**)
+  - Molga, already at `imageScale: 0.5`, is closer, so the scale is inconsistent across units
+- Fix, for every unit:
+  1. Set `imageScale = (2.4 × radius) / max(frame width, frame height)`, so drawn size ≈ 1.2× hitbox. Saber Tiger → 0.35, Gundam → 0.44. The HD art stays crisp when scaled down.
+  2. Keep tiers distinct by radius instead: T1 ≈ 12–16, T2 ≈ 18–24, experimental ≈ 36–45 (vanilla mammoth 22, experimental tank 37).
+  3. Multiply every `x`/`y`/`attach_x`/`attach_y` in `[leg_*]`, `[arm_*]` and `[turret_*]` by the same factor the art shrank by, and give leg/foot/arm/turret images matching scale, so parts stay attached.
+  4. Re-check `shadowOffsetX/Y` and `turretSize`.
+- Check: verify.py item 17 computes drawn size / (2 × radius) for every unit with a staged body image and requires 0.9–1.5.
 
-### 17. Sprite scale vs hitbox
-Formula applied across all units: `imageScale = 2.4 * radius / max(frame width, frame height)`.
-Every unit's `imageScale` matches this exact ratio so units fit their collision circle cleanly without dwarfing base buildings.
-All coordinates `x`, `y`, `attach_x`, `attach_y` in `[leg_*]`, `[arm_*]`, and `[turret_*]` scaled proportionally by `ratio = targetScale / oldScale`.
-Auxiliary images (`leg.png`, `foot.png`, weapons, arms, shields) scaled to matching world dimensions.
-Tier sizes preserved via radius: T1 12-16, T2 18-24, Experimental 36-45.
-
-### 18. Outlined team-colour accents
-- Added 2-3px pure-green `#00FF00` (`RGB(0, 220, 0)`) team-colour bands bounded by dark `#202020` borders on:
-  - Upper armored thigh of all `leg.png`
-  - Dorsal metatarsal plates of all `foot.png`
-  - Drone chassis and stabilizer wings of `nanobot.png`
-  - Hover core of `GZ REPAIR DRONE anim.png`
-  - Fuselage and fin of `magella_top.png`
-  - All unit body `anim.png` shoulder/carapace bands
-Enables distinct team-colour visibility for red players on red mecha and blue players on blue mecha.
+### 18. Team colour disappears on units whose body is red (area b, Sandbox)
+- With 2 teams of Saber Tigers, team 1 showed its green accents but team 2's accents were recoloured to red on a red body and vanished, so you can't tell who owns which tiger. The same will happen to Char's Zaku, Z'Gok, Big Zam and Guysak (red/pink bodies), and to blue-team units on blue Gundams/Gouf.
+- Fix: put team colour on a part that is never body-coloured. Use a 2–3 px band with a dark (#202020) outline on both sides: a stripe across the back plate or shoulders, the cockpit frame, or a ring under the body. Also add team colour to the leg/foot images and to the nanobots, so the colour shows from any angle.
+- Check (manual): spawn the same unit for team 1 (green), team 2 (red) and team 3 (blue) in Sandbox and confirm all three are distinguishable at default zoom.
