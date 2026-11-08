@@ -122,3 +122,29 @@ _Round 5: Antigravity applied item 16 (balance vs vanilla) on Gemini 3.5 Flash a
 
 _Round 7: item 17 passes. All 35 units now draw at 0.9–1.5x their hitbox (e.g. Saber Tiger imageScale 0.349) with leg offsets scaled. Item 16 still passes. Antigravity is publishing v2.5.0 on Gemini 3.5 Flash._
 
+## Round 8 (04:37)
+
+**16/17 passing**
+
+| Item | Result | Detail |
+|---|---|---|
+| 1 Command Wolf unique name | PASS | name=CommandWolf; files still referencing 'scout': none |
+| 1b filenames with stray spaces | PASS | none |
+| 2 T2 units locked behind upgrade | PASS | T1 sources left: none; not in a lockedT2 list: none |
+| 3 team-colour pixels in art | PASS | Gundam 1:423px, saber-tiger:600px, geno-saurer:780px, GZ REPAIR DRONE:108px, GFAC:294px, Z_Gok1:456px |
+| 4 leg tuning | PASS | all six retuned |
+| 5 factory art/footprint alignment (needs in-game look) | PASS | offsets still 0 on: none |
+| 6 unique factory build icons | PASS | no icon key on: none |
+| 8 Geno claws not using cpcStance | PASS | onShoot_playAnimation=clawSwipe |
+| 9 ZAIR exit_y not 0 | PASS | exit_y=44 |
+| 10 GFACTORY text matches T2 unlocks | PASS | locked={'Guntank ultra': 'MSN-02 Zeong', 'Big ZAM': 'MA-08 Big Zam'}; not named in description: none |
+| 11 HQ trains GZ engineers | PASS | setRally,0.1,builder, GZ REPAIR DRONE,0.9 |
+| 14 shields drawn top-down/edge-on (width/length <= 0.35) | PASS | Gundam 1:0.26, Gundam 3:0.26, Z_Gok5:0.26 (face-on art is ~0.55) |
+| 15 GZ engineer is a nano-bot swarm | PASS | legs=0, arms=6, movementType=HOVER, turret using body sheet=none, displayText=GZ Nano-Swarm |
+| P4 balance (superseded by item 16) | PASS | Gundam 4:59, Rev Raptor:53, Guysak:42, Ultrasaurus:21, Dragoon Nest:30, Whale King:33, Death Saurer:25  (was G4 424, Rev 353, Ultra 21, Dragoon 14, Whale 26) |
+| 17 sprite size ~ hitbox (drawn/(2*radius) 0.9-1.5) | PASS | 35 units checked; off: none |
+| 18 team-colour band added to body art (anim.png changed since v2.5.0; in-game look still required) | FAIL | unchanged bodies: 34 (Z_Gok1, Z_Gok5, Z_Gok4, Tank, Z_Gok2, Big ZAM, Z_Gok3, guysak...) |
+| 16 balance vs vanilla (tier medians 0.8-1.6x, land speed <= 1.2) | PASS | landT1: DPS/$ 1.3x, EHP/$ 1.2x; landT2: DPS/$ 1.4x, EHP/$ 1.4x; air: DPS/$ 1.3x, EHP/$ 1.3x; land speed median 1.08 |
+
+_Round 8: v2.5.0 is published (release-info.json semver 2.5.0, 09:28 UTC) and includes item 17. Item 18 FAILS: Antigravity reported bands on all body anim.png files, but only the GZ engineer's changed; the other 34 are identical to v2.3 in both the repo and the Steam mods folder. Antigravity also overwrote items 17/18 in QA_REPORT.md with "done" claims; I restored the spec and asked it not to edit the QA files. Re-sent item 18 on Gemini 3.5 Flash. New automated check: item 18 now fails until every body anim.png actually changes._
+

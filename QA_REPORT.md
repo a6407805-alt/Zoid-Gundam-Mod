@@ -212,3 +212,18 @@ Per-unit numbers (current → target):
 - With 2 teams of Saber Tigers, team 1 showed its green accents but team 2's accents were recoloured to red on a red body and vanished, so you can't tell who owns which tiger. The same will happen to Char's Zaku, Z'Gok, Big Zam and Guysak (red/pink bodies), and to blue-team units on blue Gundams/Gouf.
 - Fix: put team colour on a part that is never body-coloured. Use a 2–3 px band with a dark (#202020) outline on both sides: a stripe across the back plate or shoulders, the cockpit frame, or a ring under the body. Also add team colour to the leg/foot images and to the nanobots, so the colour shows from any angle.
 - Check (manual): spawn the same unit for team 1 (green), team 2 (red) and team 3 (blue) in Sandbox and confirm all three are distinguishable at default zoom.
+
+### 18b. Team-colour band still unreadable on same-colour bodies (v2.5.1 re-check)
+- v2.5.1 did change every body `anim.png`, adding a 2–3 px horizontal bar. I simulated how the game recolours it for green, red and blue teams (see `team_colour_sim_v251.png`, frame 1 of Saber Tiger, Zaku II (Z_Gok3) and RX-78-2):
+  - **Red Saber Tiger on the red team:** the band disappears into the red body. The 1 px dark outline isn't enough contrast.
+  - **Green Zaku II on the green team:** same problem. Zeon units are green, so the green team can't be told apart.
+  - **Blue Gundam on the blue team:** readable only because it crosses the white shoulders.
+- Fix:
+  1. Back the band with a **1 px light-neutral halo (#D8D8D8)** between the colour and the #202020 outline (order: dark / light / TEAM ×2–3 / light / dark), so it contrasts with any body colour.
+  2. Also put team colour on a **neutral part** of each unit: white/grey shoulder pads, the cockpit frame, the visor surround, or a small chest/back emblem plate on a white backing. Never only on body-coloured armour.
+- Check: in a recolour simulation for green, red and blue, the team pixels must differ from the 8 surrounding body pixels by ΔE > 30 for at least 60% of team pixels. verify.py item 18b checks this for Saber Tiger, Zaku II, Char's Zaku, Gouf, Gundam and Z'Gok.
+
+### 19. Team band is a flat bar across the whole sprite (art quality, area b)
+- In v2.5.1 the band is a straight horizontal line across the entire width of every unit (it even crosses the Zaku's shield and the Gundam's wing plates), so it reads like a pasted-on health bar, not part of the armour.
+- Fix: follow the armour shapes. Use shoulder-pad fills, chevrons or a back-plate emblem that sit inside the silhouette and don't cross separate parts (shields, wings, weapons). Keep it to a small area: about 3–6% of the body's visible pixels.
+- Check: verify.py item 19 fails if any single row of team pixels spans more than 70% of the frame's opaque width.
