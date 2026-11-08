@@ -246,13 +246,14 @@
       "image": "Assets/Roster/CoreBooster.png"
     },
     {
-      "name": "COMMAND WOLF & REV RAPTOR",
+      "id": "CommandWolf",
+      "name": "RZ-009 COMMAND WOLF (CommandWolf) & REV RAPTOR",
       "tagline": "High-Speed Zoid Recon & Organoid Pile-Bunker Slasher!",
       "added": "2026-11-08T01:36:00-05:00",
       "accent": "#06B6D4",
       "status": "green",
-      "version": "2.1.0",
-      "note": "Irvine Smoke & AC Long Shot + Rev Raptor Armor-Piercing Pile Bunker Stake",
+      "version": "2.2.0",
+      "note": "CommandWolf [core] ID (no longer overrides vanilla scout) + Irvine AC Long Shot & Rev Raptor Pile Bunker",
       "image": "Assets/Roster/CommandWolf.png"
     },
     {
