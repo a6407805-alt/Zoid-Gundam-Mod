@@ -11,7 +11,7 @@
     <AssemblyName>Zoid-Gundam-Mod</AssemblyName>
     <RootNamespace>ZoidGundamLauncher</RootNamespace>
     <ApplicationIcon>Assets\launcher.ico</ApplicationIcon>
-    <Version>1.0.4</Version>
+    <Version>2.0.0</Version>
     <Product>Zoid Gundam Mod</Product>
 
     <RuntimeIdentifier>win-x64</RuntimeIdentifier>

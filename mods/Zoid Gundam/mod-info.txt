@@ -1,6 +1,6 @@
 [mod]
 title: Zoids Gundam Alliance
-description: Zoids & Mobile Suit Gundam Total Conversion Mod Pack for Rusted Warfare — featuring Gundam Federation, Zeon Amphibious Corps (Z'Gok / Big Zam), and Zoids Alliance (Command Wolf, Cannon Tortoise, Dibison, Gustav, Redler, Shield Liger, Geno Saurer, Death Saurer & more) plus custom factories, extractors, and turrets.
+description: Zoids & Mobile Suit Gundam Total Conversion Mod (v2.0) - 36 canon-scaled, balanced & animated units with IK walking limbs, articulated weapons, and signature Special Moves! Features Earth Federation (RX-78-2, G-3, Guncannon, Guntank, Core Booster), Principality of Zeon (Zaku II, Char's Zaku II, Gouf, Acguy, Z'Gok, Magella Attack, Zeong, Elmeth, Big Zam), and Helic/Guylos Zoids (Shield Liger, Saber Tiger, Command Wolf, Dibison, Elephander, Iron Kong, Gojulas, Geno Saurer, Death Saurer, Ultrasaurus, Dragoon Nest & Whale King) + T1/T2 Hangars & Foundries.
 tags: units, buildings, gundam, zoids, mecha, total conversion
 minVersion: 1.15
 thumbnail: mod-thumbnail.png
