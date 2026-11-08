@@ -194,3 +194,21 @@ Per-unit numbers (current → target):
 | MSN-02 Zeong | `GUNDAM/Guntank ultra/Guntank ultra.ini` | landT2 | 5200 → 13000 | ×0.48 (DPS 655 → 314) | ×0.9 (EHP 5000 → 4500) | 1.55 → 0.93 | 310 → 248 |
 
 **Verify:** `verify.py` item 16 checks that every tier's median DPS/$ and EHP/$ is between 0.8× and 1.6× vanilla, and that the land move-speed median is ≤ 1.2.
+
+
+### 17. Sprite scale vs hitbox
+Formula applied across all units: `imageScale = 2.4 * radius / max(frame width, frame height)`.
+Every unit's `imageScale` matches this exact ratio so units fit their collision circle cleanly without dwarfing base buildings.
+All coordinates `x`, `y`, `attach_x`, `attach_y` in `[leg_*]`, `[arm_*]`, and `[turret_*]` scaled proportionally by `ratio = targetScale / oldScale`.
+Auxiliary images (`leg.png`, `foot.png`, weapons, arms, shields) scaled to matching world dimensions.
+Tier sizes preserved via radius: T1 12-16, T2 18-24, Experimental 36-45.
+
+### 18. Outlined team-colour accents
+- Added 2-3px pure-green `#00FF00` (`RGB(0, 220, 0)`) team-colour bands bounded by dark `#202020` borders on:
+  - Upper armored thigh of all `leg.png`
+  - Dorsal metatarsal plates of all `foot.png`
+  - Drone chassis and stabilizer wings of `nanobot.png`
+  - Hover core of `GZ REPAIR DRONE anim.png`
+  - Fuselage and fin of `magella_top.png`
+  - All unit body `anim.png` shoulder/carapace bands
+Enables distinct team-colour visibility for red players on red mecha and blue players on blue mecha.
