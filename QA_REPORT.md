@@ -227,3 +227,8 @@ Per-unit numbers (current → target):
 - In v2.5.1 the band is a straight horizontal line across the entire width of every unit (it even crosses the Zaku's shield and the Gundam's wing plates), so it reads like a pasted-on health bar, not part of the armour.
 - Fix: follow the armour shapes. Use shoulder-pad fills, chevrons or a back-plate emblem that sit inside the silhouette and don't cross separate parts (shields, wings, weapons). Keep it to a small area: about 3–6% of the body's visible pixels.
 - Check: verify.py item 19 fails if any single row of team pixels spans more than 70% of the frame's opaque width.
+
+### 20. Engine load error: idle animation defined twice (reported by the owner via screenshot)
+- Rusted Warfare error: "Cannot define animation idle on graphics and with onAction at same time". It happens when a unit has `animation_idle_start/end/speed` in `[graphics]` AND an `[animation_*]` section with `onActions: idle`. Antigravity said it fixed this in `Gundam.ini`, and it may be why the game froze on a white window around 04:21.
+- Fix: in any such unit, keep only one of the two. Prefer the `[animation_idle]` section for arm/body motion and remove `animation_idle_*` from `[graphics]`.
+- Check: verify.py item 20 scans every INI for the conflict.
