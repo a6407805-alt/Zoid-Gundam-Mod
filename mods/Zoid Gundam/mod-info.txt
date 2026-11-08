@@ -1,6 +1,6 @@
 [mod]
 title: Zoids Gundam Alliance
-description: Zoids and Mobile Suit Gundam Total Conversion Mod (v2.1) - 36 top-down north-oriented units scaled to Zoids Battle Legends with canonical 2-legged bipedal, 4-legged quadruped, 6-legged scorpion, tracked and aerial locomotion plus EX Special Moves and Option Parts! Features Earth Federation (RX-78-2, G-3, Guncannon, Guntank, Core Booster), Principality of Zeon (Zaku II, Char's Zaku II, Gouf, Acguy, Z'Gok, Magella Attack, Zeong, Elmeth, Big Zam), and Helic/Guylos Zoids (Shield Liger, Saber Tiger, Command Wolf, Dibison, Elephander, Iron Kong, Gojulas, Geno Saurer, Death Saurer, Ultrasaurus, Dragoon Nest and Whale King) + T1/T2 Hangars and Foundries.
+description: Zoids and Mobile Suit Gundam Total Conversion Mod (v2.2 HD) - 36 top-down north-oriented units scaled to Zoids Battle Legends with canonical 2-legged bipedal, 4-legged quadruped, 6-legged scorpion, tracked and aerial locomotion plus EX Special Moves and Option Parts! Features Earth Federation (RX-78-2, G-3, Guncannon, Guntank, Core Booster), Principality of Zeon (Zaku II, Char's Zaku II, Gouf, Acguy, Z'Gok, Magella Attack, Zeong, Elmeth, Big Zam), and Helic/Guylos Zoids (Shield Liger, Saber Tiger, Command Wolf, Dibison, Elephander, Iron Kong, Gojulas, Geno Saurer, Death Saurer, Ultrasaurus, Dragoon Nest and Whale King) + T1/T2 Hangars and Foundries.
 tags: units, buildings, gundam, zoids, mecha, total conversion
 minVersion: 1.15
 thumbnail: mod-thumbnail.png
