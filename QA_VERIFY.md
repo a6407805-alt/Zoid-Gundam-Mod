@@ -176,3 +176,33 @@ _Round 8: v2.5.0 is published (release-info.json semver 2.5.0, 09:28 UTC) and in
 
 _Round 9: v2.5.1 is published. All 35 body anim.png files changed (item 18's file check passes), but a recolour simulation (team_colour_sim_v251.png) shows the red-team band vanishing on the red Saber Tiger (33% contrast) and the blue-team band on the blue Gouf (43%), and every band is a full-width bar → new items 18b and 19 sent to Antigravity. QA_REPORT.md was untouched by Antigravity this time. The game was still a frozen white window at 04:40._
 
+## Round 15 (05:29)
+
+**20/21 passing**
+
+| Item | Result | Detail |
+|---|---|---|
+| 1 Command Wolf unique name | PASS | name=CommandWolf; files still referencing 'scout': none |
+| 1b filenames with stray spaces | PASS | none |
+| 2 T2 units locked behind upgrade | PASS | T1 sources left: none; not in a lockedT2 list: none |
+| 3 team-colour pixels in art | PASS | Gundam 1:450px, saber-tiger:426px, geno-saurer:651px, GZ REPAIR DRONE:27px, GFAC:294px, Z_Gok1:579px |
+| 4 leg tuning | PASS | all six retuned |
+| 5 factory art/footprint alignment (needs in-game look) | PASS | offsets still 0 on: none |
+| 6 unique factory build icons | PASS | no icon key on: none |
+| 8 Geno claws not using cpcStance | PASS | onShoot_playAnimation=clawSwipe |
+| 9 ZAIR exit_y not 0 | PASS | exit_y=44 |
+| 10 GFACTORY text matches T2 unlocks | PASS | locked={'Guntank ultra': 'MSN-02 Zeong', 'Big ZAM': 'MA-08 Big Zam'}; not named in description: none |
+| 11 HQ trains GZ engineers | PASS | setRally,0.1,builder, GZ REPAIR DRONE,0.9 |
+| 14 shields drawn top-down/edge-on (width/length <= 0.35) | PASS | Gundam 1:0.26, Gundam 3:0.26, Z_Gok5:0.26 (face-on art is ~0.55) |
+| 15 GZ engineer is a nano-bot swarm | PASS | legs=0, arms=6, movementType=HOVER, turret using body sheet=none, displayText=GZ Nano-Swarm |
+| P4 balance (superseded by item 16) | PASS | Gundam 4:59, Rev Raptor:53, Guysak:42, Ultrasaurus:21, Dragoon Nest:30, Whale King:33, Death Saurer:25  (was G4 424, Rev 353, Ultra 21, Dragoon 14, Whale 26) |
+| 17 sprite size ~ hitbox (drawn/(2*radius) 0.9-1.5) | PASS | 35 units checked; off: none |
+| 18 team-colour band added to body art (anim.png changed since v2.5.0; in-game look still required) | PASS | unchanged bodies: 0 () |
+| 18b team colour contrasts with body for G/R/B teams (>=60% of team px) | PASS | ok |
+| 19 team band follows armour shapes (no full-width bars) | PASS | ok |
+| 20 no 'Cannot define animation idle on graphics and with onAction' conflict | PASS | none |
+| 21 team accents are solid shapes (row transitions per px <= 0.25) | FAIL | Saber Tiger:0.68, Zaku II:0.66, Gouf:0.58, Gundam:0.66 |
+| 16 balance vs vanilla (tier medians 0.8-1.6x, land speed <= 1.2) | PASS | landT1: DPS/$ 1.3x, EHP/$ 1.2x; landT2: DPS/$ 1.4x, EHP/$ 1.4x; air: DPS/$ 1.3x, EHP/$ 1.3x; land speed median 1.08 |
+
+_Round 15: v2.5.2 is published (all 35 body anim.png files regenerated). The contrast and shape checks (18b, 19) pass and team colour now reads on every body colour, but the accent is a dotted barcode mesh (new item 21; see team_colour_sim_v252.png). Antigravity reported a clean game relaunch reaching the main menu, but at the usual window position Rusted Warfare still shows a blank white window._
+
