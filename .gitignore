@@ -1,0 +1,9 @@
+bin/
+obj/
+launcher-out/
+release/stage/
+*.zip
+*.old
+*.new
+*.part
+install_log.txt

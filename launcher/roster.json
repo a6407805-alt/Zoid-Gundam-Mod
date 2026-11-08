@@ -1,0 +1,253 @@
+{
+  "characters": [
+    {
+      "name": "RX-78 GUNDAM MK-IV",
+      "tagline": "Twin beam sabers & heavy rifle.",
+      "added": "2026-11-08T00:05:00-05:00",
+      "accent": "#3B82F6",
+      "status": "active",
+      "version": "1.0.4",
+      "note": "Updated beam saber sprites & combat stats in Gundam 4.ini",
+      "image": "Assets/Roster/Gundam4.png",
+      "new": true
+    },
+    {
+      "name": "MSM-07 Z'GOK",
+      "tagline": "Zeon amphibious mobile suit.",
+      "added": "2026-11-08T00:04:00-05:00",
+      "accent": "#A855F7",
+      "status": "active",
+      "version": "1.0.2",
+      "note": "Updated high-res sprite & amphibious claw attacks",
+      "image": "Assets/Roster/ZGok.png",
+      "new": true
+    },
+    {
+      "name": "COMMAND WOLF",
+      "tagline": "High-speed Zoid strike scout.",
+      "added": "2026-11-08T00:03:00-05:00",
+      "accent": "#38BDF8",
+      "status": "yellow",
+      "version": "1.0.0",
+      "note": "Fast recon unit built at Z-INF / Z-FAC",
+      "image": "Assets/Roster/CommandWolf.png",
+      "new": true
+    },
+    {
+      "name": "DIBISON",
+      "tagline": "17-barrel heavy assault Zoid.",
+      "added": "2026-11-07T22:00:00-05:00",
+      "accent": "#F59E0B",
+      "status": "yellow",
+      "version": "1.0.0",
+      "image": "Assets/Roster/Dibison.png"
+    },
+    {
+      "name": "CANNON TORTOISE",
+      "tagline": "Armored long-range artillery Zoid.",
+      "added": "2026-11-07T21:00:00-05:00",
+      "accent": "#84CC16",
+      "status": "yellow",
+      "version": "1.0.0",
+      "image": "Assets/Roster/CannonTortoise.png"
+    },
+    {
+      "name": "REDDLA (REDLER)",
+      "tagline": "Supersonic aerial strike dragon Zoid.",
+      "added": "2026-11-07T20:00:00-05:00",
+      "accent": "#EF4444",
+      "status": "yellow",
+      "version": "1.0.0",
+      "image": "Assets/Roster/Reddla.png"
+    },
+    {
+      "name": "GUSTAV & GUNNER",
+      "tagline": "Armored transport & heavy support.",
+      "added": "2026-11-07T19:00:00-05:00",
+      "accent": "#D97706",
+      "status": "yellow",
+      "version": "1.0.0",
+      "image": "Assets/Roster/Gustav.png"
+    },
+    {
+      "name": "RX-78 GUNDAM MK-I",
+      "tagline": "Federation frontline mobile suit.",
+      "added": "2026-11-07T18:00:00-05:00",
+      "accent": "#60A5FA",
+      "status": "yellow",
+      "version": "1.0.0",
+      "image": "Assets/Roster/Gundam1.png"
+    },
+    {
+      "name": "RX-77 GUNCANNON (MK-II)",
+      "tagline": "Mid-range mobile suit artillery.",
+      "added": "2026-11-07T17:00:00-05:00",
+      "accent": "#F43F5E",
+      "status": "yellow",
+      "version": "1.0.0",
+      "image": "Assets/Roster/Gundam2.png"
+    },
+    {
+      "name": "GUNDAM MK-III HEAVY",
+      "tagline": "Heavy beam cannon mobile suit.",
+      "added": "2026-11-07T16:00:00-05:00",
+      "accent": "#2563EB",
+      "status": "yellow",
+      "version": "1.0.0",
+      "image": "Assets/Roster/Gundam3.png"
+    },
+    {
+      "name": "GZ REPAIR DRONE",
+      "tagline": "Alliance builder, repair & fabricator unit.",
+      "added": "2026-11-07T15:00:00-05:00",
+      "accent": "#10B981",
+      "status": "green",
+      "version": "1.0.0",
+      "image": "Assets/Roster/RepairDrone.png"
+    },
+    {
+      "name": "SHIELD LIGER",
+      "tagline": "Energy-shielded high-speed lion Zoid.",
+      "added": "2026-11-07T14:00:00-05:00",
+      "accent": "#3B82F6",
+      "status": "red",
+      "version": "0.2.0",
+      "note": "Sprites staged in units/ZOIDS/shield-liger",
+      "image": "Assets/Roster/ShieldLiger.png"
+    },
+    {
+      "name": "GENO SAURER",
+      "tagline": "Charged Particle Cannon tyrannosaur Zoid.",
+      "added": "2026-11-07T13:00:00-05:00",
+      "accent": "#9333EA",
+      "status": "red",
+      "version": "0.2.0",
+      "note": "Sprites staged in units/ZOIDS/geno-saurer",
+      "image": "Assets/Roster/GenoSaurer.png"
+    },
+    {
+      "name": "DEATH SAURER",
+      "tagline": "Super-heavy apocalyptic boss Zoid.",
+      "added": "2026-11-07T12:00:00-05:00",
+      "accent": "#DC2626",
+      "status": "red",
+      "version": "0.2.0",
+      "note": "Sprites staged in units/ZOIDS/Deathsaurer",
+      "image": "Assets/Roster/DeathSaurer.png"
+    },
+    {
+      "name": "MA-08 BIG ZAM",
+      "tagline": "Zeon mega-particle mobile armor boss.",
+      "added": "2026-11-07T11:00:00-05:00",
+      "accent": "#22C55E",
+      "status": "red",
+      "version": "0.2.0",
+      "note": "Sprites staged in units/Z_Gok/Big ZAM",
+      "image": "Assets/Roster/BigZam.png"
+    },
+    {
+      "name": "IRON KONG",
+      "tagline": "Heavy missile gorilla Zoid.",
+      "added": "2026-11-07T10:00:00-05:00",
+      "accent": "#EA580C",
+      "status": "red",
+      "version": "0.2.0",
+      "note": "Sprites staged in units/ZOIDS/iron-kong",
+      "image": "Assets/Roster/IronKong.png"
+    },
+    {
+      "name": "SABER TIGER",
+      "tagline": "Imperial high-speed assault tiger Zoid.",
+      "added": "2026-11-07T09:00:00-05:00",
+      "accent": "#EAB308",
+      "status": "red",
+      "version": "0.2.0",
+      "note": "Sprites staged in units/ZOIDS/saber-tiger",
+      "image": "Assets/Roster/SaberTiger.png"
+    },
+    {
+      "name": "GOJULAS",
+      "tagline": "Republic giant brawler Zoid.",
+      "added": "2026-11-07T08:00:00-05:00",
+      "accent": "#64748B",
+      "status": "red",
+      "version": "0.2.0",
+      "note": "Sprites staged in units/ZOIDS/gojulas",
+      "image": "Assets/Roster/Gojulas.png"
+    },
+    {
+      "name": "ULTRASAURUS",
+      "tagline": "Mobile fortress command carrier Zoid.",
+      "added": "2026-11-07T07:00:00-05:00",
+      "accent": "#0284C7",
+      "status": "red",
+      "version": "0.2.0",
+      "note": "Sprites staged in units/ZOIDS/ultasaurus",
+      "image": "Assets/Roster/Ultrasaurus.png"
+    },
+    {
+      "name": "GUNTANK ULTRA",
+      "tagline": "Experimental heavy siege Guntank.",
+      "added": "2026-11-07T06:00:00-05:00",
+      "accent": "#6366F1",
+      "status": "red",
+      "version": "0.2.0",
+      "note": "Sprites staged in units/GUNDAM/Guntank ultra",
+      "image": "Assets/Roster/GuntankUltra.png"
+    },
+    {
+      "name": "WHITE BASE CARRIER",
+      "tagline": "Pegasus-class mobile suit assault carrier.",
+      "added": "2026-11-07T05:00:00-05:00",
+      "accent": "#94A3B8",
+      "status": "red",
+      "version": "0.2.0",
+      "note": "Sprites staged in units/GUNDAM/Plane ultra",
+      "image": "Assets/Roster/GundamShip.png"
+    }
+  ],
+  "maps": [
+    {
+      "title": "GUNDAM FEDERATION BASE",
+      "subtitle": "G-FAC, G-AIR & G-INF Mobile Suit Production",
+      "image": "Assets/Tiles/GundamFac.png",
+      "badge": "ACTIVE"
+    },
+    {
+      "title": "ZOIDS ALLIANCE COMPLEX",
+      "subtitle": "Z-FAC, Z-AIR & Z-INF Bio-Mechanical Foundries",
+      "image": "Assets/Tiles/ZoidFac.png",
+      "badge": "ACTIVE"
+    },
+    {
+      "title": "ALLIANCE COMMAND HQ",
+      "subtitle": "Restorable HQ + GZ Repair Drone Deployment",
+      "image": "Assets/Tiles/AllianceHQ.png",
+      "badge": "READY"
+    },
+    {
+      "title": "T1-T3 DEFENSE & EXTRACTORS",
+      "subtitle": "Overclocked & Reinforced T3 Economy + Flak/Lightning Turrets",
+      "image": "Assets/Tiles/DefenseGrid.png"
+    }
+  ],
+  "modes": [
+    {
+      "title": "ZOID GUNDAM TOTAL WARFARE",
+      "subtitle": "Full Tech Tree + Multiplayer+FullGame.dll included",
+      "image": "Assets/Tiles/TotalWarfare.png",
+      "badge": "LIVE"
+    },
+    {
+      "title": "ZEON AMPHIBIOUS ASSAULT",
+      "subtitle": "Z'Gok & Big Zam Naval/Land Invasion",
+      "image": "Assets/Tiles/BossAssault.png"
+    },
+    {
+      "title": "DEATH SAURER SIEGE",
+      "subtitle": "Boss-class Zoids & Mobile Armor Showdown",
+      "image": "Assets/Tiles/ZoidInvasion.png",
+      "badge": "WIP"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!-- Zoid Gundam Launcher: Warframe-style auto-sync + auto-updater + Steam PLAY integration for Rusted Warfare.
+       Self-contained single file, so friends don't need to install .NET first. -->
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <AssemblyName>Zoid-Gundam-Mod</AssemblyName>
+    <RootNamespace>ZoidGundamLauncher</RootNamespace>
+    <ApplicationIcon>Assets\launcher.ico</ApplicationIcon>
+    <Version>1.0.4</Version>
+    <Product>Zoid Gundam Mod</Product>
+
+    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+    <SelfContained>true</SelfContained>
+    <PublishSingleFile>true</PublishSingleFile>
+    <IncludeNativeLibrariesForSelfExtract>true</IncludeNativeLibrariesForSelfExtract>
+    <EnableCompressionInSingleFile>true</EnableCompressionInSingleFile>
+    <DebugType>embedded</DebugType>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Resource Include="Assets\background.jpg" />
+    <Resource Include="Assets\Roster\*.png" />
+    <Resource Include="Assets\Tiles\*.png" />
+    <Resource Include="roster.json" />
+  </ItemGroup>
+
+</Project>

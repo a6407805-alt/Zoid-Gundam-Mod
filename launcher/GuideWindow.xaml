@@ -1,0 +1,128 @@
+<Window x:Class="ZoidGundamLauncher.GuideWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Zoid Gundam Mod - Guide"
+        Width="600" Height="720"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        Background="Transparent"
+        ResizeMode="NoResize"
+        WindowStartupLocation="Manual"
+        ShowInTaskbar="False"
+        FontFamily="Segoe UI">
+
+    <Window.Resources>
+        <SolidColorBrush x:Key="Accent" Color="#FFC928" />
+        <SolidColorBrush x:Key="TextDim" Color="#C9D6EA" />
+
+        <Style x:Key="TitleButton" TargetType="Button">
+            <Setter Property="Width" Value="44" />
+            <Setter Property="Height" Value="34" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="FontSize" Value="14" />
+            <Setter Property="Cursor" Value="Hand" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="Bg" Background="Transparent">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="Bg" Property="Background" Value="#40FFFFFF" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="GhostButton" TargetType="Button">
+            <Setter Property="Foreground" Value="{StaticResource Accent}" />
+            <Setter Property="FontSize" Value="13" />
+            <Setter Property="FontWeight" Value="SemiBold" />
+            <Setter Property="Padding" Value="14,6" />
+            <Setter Property="Cursor" Value="Hand" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="Bg" Background="#30FFC928" BorderBrush="{StaticResource Accent}" BorderThickness="1" CornerRadius="4" Padding="{TemplateBinding Padding}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="Bg" Property="Background" Value="#60FFC928" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="SectionHeader" TargetType="TextBlock">
+            <Setter Property="Foreground" Value="{StaticResource Accent}" />
+            <Setter Property="FontSize" Value="24" />
+            <Setter Property="FontWeight" Value="Black" />
+            <Setter Property="Margin" Value="0,18,0,6" />
+        </Style>
+
+        <Style x:Key="StepTitle" TargetType="TextBlock">
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="FontSize" Value="18" />
+            <Setter Property="FontWeight" Value="Bold" />
+        </Style>
+
+        <Style x:Key="StepBody" TargetType="TextBlock">
+            <Setter Property="Foreground" Value="{StaticResource TextDim}" />
+            <Setter Property="FontSize" Value="16" />
+            <Setter Property="LineHeight" Value="23" />
+            <Setter Property="TextWrapping" Value="Wrap" />
+            <Setter Property="Margin" Value="0,2,0,10" />
+        </Style>
+    </Window.Resources>
+
+    <Border CornerRadius="10" Background="#FF0E1220" BorderBrush="{StaticResource Accent}" BorderThickness="1" Padding="28,10,28,22">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0" Background="Transparent" MouseLeftButtonDown="TitleBar_MouseLeftButtonDown" Margin="-28,0,-28,0" Height="44">
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="28,0,0,0">
+                    <TextBlock Text="GUIDE" Foreground="White" FontSize="18" FontWeight="Black" />
+                    <TextBlock Text="  INSTALL, AUTO-SYNC &amp; STEAM" Foreground="{StaticResource Accent}" FontSize="18" FontWeight="Black" />
+                </StackPanel>
+                <Button Content="&#x2715;" Style="{StaticResource TitleButton}" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,4,10,0" Click="Close_Click" ToolTip="Close" />
+            </Grid>
+
+            <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto" Margin="0,4,0,0">
+                <StackPanel Margin="0,0,22,0">
+
+                    <TextBlock Style="{StaticResource SectionHeader}" Text="Installing &amp; Playing" Margin="0,8,0,6" />
+                    <TextBlock Style="{StaticResource StepTitle}" Text="1. Run Zoid-Gundam-Mod.exe" />
+                    <TextBlock Style="{StaticResource StepBody}" Text="The launcher automatically finds Rusted Warfare across your Steam libraries and installs Zoid Gundam into Rusted Warfare\mods\units\Zoid Gundam." />
+                    <TextBlock Style="{StaticResource StepTitle}" Text="2. Hook up Steam's Play button (optional)" />
+                    <TextBlock Style="{StaticResource StepBody}" Text="Flip STEAM PLAY → LAUNCHER: ON at the top. From then on, clicking Play on Rusted Warfare in Steam opens this launcher first, syncs &amp; updates, and launches Rusted Warfare." />
+                    <TextBlock Style="{StaticResource StepTitle}" Text="3. Press PLAY" />
+                    <TextBlock Style="{StaticResource StepBody}" Text="Starts Rusted Warfare through Steam. In Rusted Warfare, make sure 'Zoids Gundam Alliance' is ticked in the Mods menu!" />
+
+                    <TextBlock Style="{StaticResource SectionHeader}" Text="Auto-Sync &amp; Auto-Update" />
+                    <TextBlock Style="{StaticResource StepBody}" Text="Whenever you edit unit .ini or .png files in Desktop\Zoid Gundam or Rusted Warfare\mods\units\Zoid Gundam, opening the launcher (or pressing SYNC &amp; CHECK UPDATES / PLAY) automatically syncs both folders, commits the changes to GitHub, and updates the live release zip in seconds!" />
+                    <TextBlock Style="{StaticResource StepBody}" Text="When your friends open the launcher, it automatically downloads the updated zip and installs the new units before starting Rusted Warfare." />
+
+                    <TextBlock Style="{StaticResource SectionHeader}" Text="Publishing via Creator / Quick Upload" />
+                    <TextBlock Style="{StaticResource StepBody}" Text="Click CREATOR at the top to inspect changed files, add a commit note, or drag-and-drop a friend's .zip / unit folder into QUICK UPLOAD." />
+
+                </StackPanel>
+            </ScrollViewer>
+
+            <DockPanel Grid.Row="2" Margin="0,14,0,0">
+                <Button DockPanel.Dock="Right" Content="Open GitHub Repo" Style="{StaticResource GhostButton}" Click="OpenRepo_Click" />
+                <TextBlock Foreground="{StaticResource TextDim}" FontSize="13" VerticalAlignment="Center" TextWrapping="Wrap" Text="Zoid Gundam Mod — Rusted Warfare Total Conversion." />
+            </DockPanel>
+
+        </Grid>
+    </Border>
+</Window>
